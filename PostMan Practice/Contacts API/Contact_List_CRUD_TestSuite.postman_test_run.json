@@ -1,0 +1,190 @@
+{
+	"id": "64e9010a-d7e0-4b7d-a5ff-a11cd37458ff",
+	"name": "Contact_List_CRUD_TestSuite",
+	"timestamp": "2026-02-02T17:27:56.283Z",
+	"collection_id": "42124354-cf7155ef-5fb8-4cf3-b457-bf8a73a64234",
+	"folder_id": 0,
+	"environment_id": "42124354-6b5994ed-113f-4843-bb06-535843cfb2ae",
+	"totalPass": 16,
+	"delay": "1",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-02-02T17:27:46.655Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "782309db-1e6e-4772-a794-3ffb36eac8a4",
+			"name": "Add Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+			"time": 769,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Contact ID is present": true,
+				"Email field exists": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Contact ID is present": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Email field exists": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				3654,
+				769
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Contact ID is present": true,
+					"Email field exists": true
+				},
+				{
+					"Status code is 201": true,
+					"Contact ID is present": true,
+					"Email field exists": true
+				}
+			]
+		},
+		{
+			"id": "e9d0c7be-afe7-423a-9b1f-33d5f2dd2e1b",
+			"name": "Get Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/6980de9875ee430015d10685",
+			"time": 512,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status is 200": true,
+				"Verify correct contact retrieved": true
+			},
+			"testPassFailCounts": {
+				"Status is 200": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Verify correct contact retrieved": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				327,
+				512
+			],
+			"allTests": [
+				{
+					"Status is 200": true,
+					"Verify correct contact retrieved": true
+				},
+				{
+					"Status is 200": true,
+					"Verify correct contact retrieved": true
+				}
+			]
+		},
+		{
+			"id": "87f258de-5a38-4410-a8e0-cc91da580435",
+			"name": "Update Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/6980de9875ee430015d10685",
+			"time": 591,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Update status 200": true,
+				"Name updated": true
+			},
+			"testPassFailCounts": {
+				"Update status 200": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Name updated": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				340,
+				591
+			],
+			"allTests": [
+				{
+					"Update status 200": true,
+					"Name updated": true
+				},
+				{
+					"Update status 200": true,
+					"Name updated": true
+				}
+			]
+		},
+		{
+			"id": "f09800b8-4600-4e71-8a10-9cdc83f727b2",
+			"name": "Delete Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/6980de9875ee430015d10685",
+			"time": 496,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Delete status 200": true
+			},
+			"testPassFailCounts": {
+				"Delete status 200": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				335,
+				496
+			],
+			"allTests": [
+				{
+					"Delete status 200": true
+				},
+				{
+					"Delete status 200": true
+				}
+			]
+		}
+	],
+	"count": 2,
+	"totalTime": 7024,
+	"collection": {
+		"requests": [
+			{
+				"id": "782309db-1e6e-4772-a794-3ffb36eac8a4",
+				"method": "POST"
+			},
+			{
+				"id": "e9d0c7be-afe7-423a-9b1f-33d5f2dd2e1b",
+				"method": "GET"
+			},
+			{
+				"id": "87f258de-5a38-4410-a8e0-cc91da580435",
+				"method": "PUT"
+			},
+			{
+				"id": "f09800b8-4600-4e71-8a10-9cdc83f727b2",
+				"method": "DELETE"
+			}
+		]
+	}
+}

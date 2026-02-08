@@ -1,0 +1,211 @@
+{
+	"id": "97ce43b4-e910-4e90-8e31-7b8fc39fabf2",
+	"name": "User_API_TestSuite",
+	"timestamp": "2026-02-03T14:59:11.598Z",
+	"collection_id": "42124354-e9a1a851-7c2f-49e1-92e2-6154db3cc39d",
+	"folder_id": 0,
+	"environment_id": "42124354-4974baaf-5aa9-4109-a4dd-b9342da646a3",
+	"totalPass": 14,
+	"delay": "1",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-02-03T14:59:04.535Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "e0f857a8-be9a-49ce-abd5-6e2ad33be572",
+			"name": "Add User",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users",
+			"time": 553,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"User created - status 201": true,
+				"Token received": true
+			},
+			"testPassFailCounts": {
+				"User created - status 201": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Token received": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				2249,
+				553
+			],
+			"allTests": [
+				{
+					"User created - status 201": true,
+					"Token received": true
+				},
+				{
+					"User created - status 201": true,
+					"Token received": true
+				}
+			]
+		},
+		{
+			"id": "f5d8826e-beea-4290-b622-bdb17dfa9e3e",
+			"name": "Login User",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/login",
+			"time": 360,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Login success 200": true
+			},
+			"testPassFailCounts": {
+				"Login success 200": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				336,
+				360
+			],
+			"allTests": [
+				{
+					"Login success 200": true
+				},
+				{
+					"Login success 200": true
+				}
+			]
+		},
+		{
+			"id": "21c7baea-b42d-4236-a88e-3003299e4948",
+			"name": "Get User Profile",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/me",
+			"time": 342,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Profile fetch success": true,
+				"Email field exists in profile": true
+			},
+			"testPassFailCounts": {
+				"Profile fetch success": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Email field exists in profile": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				308,
+				342
+			],
+			"allTests": [
+				{
+					"Profile fetch success": true,
+					"Email field exists in profile": true
+				},
+				{
+					"Profile fetch success": true,
+					"Email field exists in profile": true
+				}
+			]
+		},
+		{
+			"id": "2d8a3831-3db1-473d-b4cb-8d65c9eb19d9",
+			"name": "Update User",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/me",
+			"time": 521,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"User updated": true
+			},
+			"testPassFailCounts": {
+				"User updated": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				315,
+				521
+			],
+			"allTests": [
+				{
+					"User updated": true
+				},
+				{
+					"User updated": true
+				}
+			]
+		},
+		{
+			"id": "530047ac-4841-4c46-b905-343b6cfd9f0b",
+			"name": "Delete User",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/me",
+			"time": 358,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"User deleted": true
+			},
+			"testPassFailCounts": {
+				"User deleted": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				348,
+				358
+			],
+			"allTests": [
+				{
+					"User deleted": true
+				},
+				{
+					"User deleted": true
+				}
+			]
+		}
+	],
+	"count": 2,
+	"totalTime": 5690,
+	"collection": {
+		"requests": [
+			{
+				"id": "e0f857a8-be9a-49ce-abd5-6e2ad33be572",
+				"method": "POST"
+			},
+			{
+				"id": "f5d8826e-beea-4290-b622-bdb17dfa9e3e",
+				"method": "POST"
+			},
+			{
+				"id": "21c7baea-b42d-4236-a88e-3003299e4948",
+				"method": "GET"
+			},
+			{
+				"id": "2d8a3831-3db1-473d-b4cb-8d65c9eb19d9",
+				"method": "PATCH"
+			},
+			{
+				"id": "530047ac-4841-4c46-b905-343b6cfd9f0b",
+				"method": "DELETE"
+			}
+		]
+	}
+}

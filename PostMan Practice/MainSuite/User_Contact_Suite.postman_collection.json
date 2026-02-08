@@ -1,0 +1,539 @@
+{
+  "info": {
+    "_postman_id": "6ae96e65-694e-4437-96bb-d472f2fff5ec",
+    "name": "User_Contact_Suite",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "42124354"
+  },
+  "item": [
+    {
+      "name": "Add User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"User created successfully\", () => {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "const res = pm.response.json();\r",
+              "\r",
+              "// Save for chaining\r",
+              "pm.environment.set(\"userId\", res.user._id);\r",
+              "pm.environment.set(\"token\", res.token);\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// Comment these code for Datadriven\r",
+              "\r",
+              "// Generate random values\r",
+              "// const timestamp = Date.now();\r",
+              "// const randomNum = Math.floor(Math.random() * 100000);\r",
+              "\r",
+              "// // Random user data\r",
+              "// const firstName = \"User\" + randomNum;\r",
+              "// const lastName = \"Auto\";\r",
+              "// const email = `user${timestamp}@test.com`;\r",
+              "// const password = \"Test@\" + randomNum;\r",
+              "\r",
+              "// Save to environment\r",
+              "// pm.environment.set(\"firstName\", firstName);\r",
+              "// pm.environment.set(\"lastName\", lastName);\r",
+              "// pm.environment.set(\"email\", email);\r",
+              "// pm.environment.set(\"password\", password);\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"{{firstName}}\",\r\n  \"lastName\": \"{{lastName}}\",\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Login successful\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "// Refresh token\r",
+              "pm.environment.set(\"token\", pm.response.json().token);\r",
+              "\r",
+              "    "
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add ContactOne",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Contact created\", () => {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "const res = pm.response.json();\r",
+              "pm.environment.set(\"contactId1\", res._id);\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "// {\r\n//   \"firstName\": \"John\",\r\n//   \"lastName\": \"Doe\",\r\n//   \"birthdate\": \"1970-01-01\",\r\n//   \"email\": \"john{{timestamp}}@fake.com\",\r\n//   \"phone\": \"8005555555\",\r\n//   \"street1\": \"1 Main St.\",\r\n//   \"city\": \"Anytown\",\r\n//   \"stateProvince\": \"KS\",\r\n//   \"postalCode\": \"12345\",\r\n//   \"country\": \"USA\"\r\n// }\r\n\r\n// For Data Driven\r\n{\r\n  \"firstName\": \"{{contactFirstName}}\",\r\n  \"lastName\": \"{{contactLastName}}\",\r\n  \"birthdate\": \"1990-01-01\",\r\n  \"email\": \"{{contactFirstName}}.{{email}}\",\r\n  \"phone\": \"{{phone}}\",\r\n  \"street1\": \"1 Main St\",\r\n  \"city\": \"New York\",\r\n  \"stateProvince\": \"NY\",\r\n  \"postalCode\": \"{{postalCode}}\",\r\n  \"country\": \"{{country}}\"\r\n}\r\n\r\n\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/contacts",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "contacts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add ContactTwo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Contact created\", () => {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "const res = pm.response.json();\r",
+              "pm.environment.set(\"contactId2\", pm.response.json()._id);\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "// {\r\n//   \"firstName\": \"Alex\",\r\n//   \"lastName\": \"Flame\",\r\n//   \"birthdate\": \"1980-02-02\",\r\n//   \"email\": \"alex{{timestamp}}@fake.com\",\r\n//   \"phone\": \"7854123695\",\r\n//   \"street1\": \"1 Main St.\",\r\n//   \"city\": \"kingdom\",\r\n//   \"stateProvince\": \"KG\",\r\n//   \"postalCode\": \"12645\",\r\n//   \"country\": \"UAE\"\r\n// }\r\n\r\n// For DataDriven\r\n{\r\n  \"firstName\": \"{{contactFirstName}}\",\r\n  \"lastName\": \"{{contactLastName}}\",\r\n  \"birthdate\": \"1990-01-01\",\r\n  \"email\": \"{{contactFirstName}}.{{email}}\",\r\n  \"phone\": \"{{phone}}\",\r\n  \"street1\": \"1 Main St\",\r\n  \"city\": \"New York\",\r\n  \"stateProvince\": \"NY\",\r\n  \"postalCode\": \"{{postalCode}}\",\r\n  \"country\": \"{{country}}\"\r\n}\r\n\r\n\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/contacts",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "contacts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Contact List",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Contact list fetched\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "    pm.expect(pm.response.json().length).to.be.at.least(2);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/contacts",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "contacts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Contact",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Single contact fetched\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Schema validation\", () => {\r",
+              "    const res = pm.response.json();\r",
+              "    pm.expect(res).to.have.property(\"firstName\");\r",
+              "    pm.expect(res).to.have.property(\"email\");\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/contacts/{{contactId1}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "contacts",
+            "{{contactId1}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Contact",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Contact updated\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "    pm.expect(pm.response.json().firstName).to.eql(\"Amy\");\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Amy\",\r\n  \"lastName\": \"Miller\",\r\n  \"birthdate\": \"1992-02-02\",\r\n  \"email\": \"amiller@test.com\",\r\n  \"phone\": \"8005554242\",\r\n  \"street1\": \"13 School St.\",\r\n  \"street2\": \"Apt 5\",\r\n  \"city\": \"Washington\",\r\n  \"stateProvince\": \"QC\",\r\n  \"postalCode\": \"456213\",\r\n  \"country\": \"Canada\"\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/contacts/{{contactId1}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "contacts",
+            "{{contactId1}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patch Contact",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Contact patched\", () => {\r",
+              "    pm.expect(pm.response.json().firstName).to.eql(\"Anna\");\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Anna\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/contacts/{{contactId1}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "contacts",
+            "{{contactId1}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Contact",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Contact deleted\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/contacts/{{contactId1}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "contacts",
+            "{{contactId1}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LogOut user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Logged out\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/logout",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(401);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/me",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "pm.variables.set(\"timestamp\", Date.now());\r",
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+	"id": "53313e0f-ea0c-495c-b606-9c5817432fcb",
+	"name": "User_Contact_Suite",
+	"timestamp": "2026-02-08T06:40:59.423Z",
+	"collection_id": "42124354-6ae96e65-694e-4437-96bb-d472f2fff5ec",
+	"folder_id": 0,
+	"environment_id": "42124354-be37474a-1874-4370-9a73-f477598bf620",
+	"totalPass": 36,
+	"delay": "1",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-02-08T06:40:26.689Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "1b04109a-9298-4919-9724-2c323ed04cdf",
+			"name": "Add User",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users",
+			"time": 581,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"User created successfully": true
+			},
+			"testPassFailCounts": {
+				"User created successfully": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				3985,
+				580,
+				581
+			],
+			"allTests": [
+				{
+					"User created successfully": true
+				},
+				{
+					"User created successfully": true
+				},
+				{
+					"User created successfully": true
+				}
+			]
+		},
+		{
+			"id": "5e0268c9-05b7-47ed-a5cc-cf1e73a1a3ab",
+			"name": "Login User",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/login",
+			"time": 621,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Login successful": true
+			},
+			"testPassFailCounts": {
+				"Login successful": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				377,
+				539,
+				621
+			],
+			"allTests": [
+				{
+					"Login successful": true
+				},
+				{
+					"Login successful": true
+				},
+				{
+					"Login successful": true
+				}
+			]
+		},
+		{
+			"id": "eb41ea76-f1a0-457c-ab1a-882686c8ca0c",
+			"name": "Add ContactOne",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+			"time": 690,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Contact created": true
+			},
+			"testPassFailCounts": {
+				"Contact created": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				344,
+				764,
+				690
+			],
+			"allTests": [
+				{
+					"Contact created": true
+				},
+				{
+					"Contact created": true
+				},
+				{
+					"Contact created": true
+				}
+			]
+		},
+		{
+			"id": "951d263d-0907-4e02-8771-fcc8137b555f",
+			"name": "Add ContactTwo",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+			"time": 350,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Contact created": true
+			},
+			"testPassFailCounts": {
+				"Contact created": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				603,
+				438,
+				350
+			],
+			"allTests": [
+				{
+					"Contact created": true
+				},
+				{
+					"Contact created": true
+				},
+				{
+					"Contact created": true
+				}
+			]
+		},
+		{
+			"id": "c1210f27-b493-486c-8fa6-8ddceadc59b6",
+			"name": "Get Contact List",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+			"time": 804,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Contact list fetched": true
+			},
+			"testPassFailCounts": {
+				"Contact list fetched": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				449,
+				534,
+				804
+			],
+			"allTests": [
+				{
+					"Contact list fetched": true
+				},
+				{
+					"Contact list fetched": true
+				},
+				{
+					"Contact list fetched": true
+				}
+			]
+		},
+		{
+			"id": "83f9c933-1186-4400-b644-3482023dabfa",
+			"name": "Get Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/69882ff13184ce0015096a68",
+			"time": 763,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Single contact fetched": true,
+				"Schema validation": true
+			},
+			"testPassFailCounts": {
+				"Single contact fetched": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Schema validation": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				504,
+				813,
+				763
+			],
+			"allTests": [
+				{
+					"Single contact fetched": true,
+					"Schema validation": true
+				},
+				{
+					"Single contact fetched": true,
+					"Schema validation": true
+				},
+				{
+					"Single contact fetched": true,
+					"Schema validation": true
+				}
+			]
+		},
+		{
+			"id": "8be1cb65-8f5f-4758-ad01-ca345f4e50cf",
+			"name": "Update Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/69882ff13184ce0015096a68",
+			"time": 844,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Contact updated": true
+			},
+			"testPassFailCounts": {
+				"Contact updated": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				489,
+				390,
+				844
+			],
+			"allTests": [
+				{
+					"Contact updated": true
+				},
+				{
+					"Contact updated": true
+				},
+				{
+					"Contact updated": true
+				}
+			]
+		},
+		{
+			"id": "e9ce0ea9-0b35-428e-9503-16cbce0ae4c5",
+			"name": "Patch Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/69882ff13184ce0015096a68",
+			"time": 821,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Contact patched": true
+			},
+			"testPassFailCounts": {
+				"Contact patched": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				613,
+				666,
+				821
+			],
+			"allTests": [
+				{
+					"Contact patched": true
+				},
+				{
+					"Contact patched": true
+				},
+				{
+					"Contact patched": true
+				}
+			]
+		},
+		{
+			"id": "02178be4-94a9-467b-8093-d9fbe081b2ed",
+			"name": "Delete Contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/69882ff13184ce0015096a68",
+			"time": 778,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Contact deleted": true
+			},
+			"testPassFailCounts": {
+				"Contact deleted": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				764,
+				385,
+				778
+			],
+			"allTests": [
+				{
+					"Contact deleted": true
+				},
+				{
+					"Contact deleted": true
+				},
+				{
+					"Contact deleted": true
+				}
+			]
+		},
+		{
+			"id": "3803cb57-70d2-42ea-94b2-d3efcb0fc0f4",
+			"name": "LogOut user",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/logout",
+			"time": 857,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Logged out": true
+			},
+			"testPassFailCounts": {
+				"Logged out": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				840,
+				831,
+				857
+			],
+			"allTests": [
+				{
+					"Logged out": true
+				},
+				{
+					"Logged out": true
+				},
+				{
+					"Logged out": true
+				}
+			]
+		},
+		{
+			"id": "d555e054-f3ba-4bf2-b6af-672fccfd9983",
+			"name": "Delete User",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/me",
+			"time": 766,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				372,
+				611,
+				766
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 3,
+	"totalTime": 23766,
+	"collection": {
+		"requests": [
+			{
+				"id": "1b04109a-9298-4919-9724-2c323ed04cdf",
+				"method": "POST"
+			},
+			{
+				"id": "5e0268c9-05b7-47ed-a5cc-cf1e73a1a3ab",
+				"method": "POST"
+			},
+			{
+				"id": "eb41ea76-f1a0-457c-ab1a-882686c8ca0c",
+				"method": "POST"
+			},
+			{
+				"id": "951d263d-0907-4e02-8771-fcc8137b555f",
+				"method": "POST"
+			},
+			{
+				"id": "c1210f27-b493-486c-8fa6-8ddceadc59b6",
+				"method": "GET"
+			},
+			{
+				"id": "83f9c933-1186-4400-b644-3482023dabfa",
+				"method": "GET"
+			},
+			{
+				"id": "8be1cb65-8f5f-4758-ad01-ca345f4e50cf",
+				"method": "PUT"
+			},
+			{
+				"id": "e9ce0ea9-0b35-428e-9503-16cbce0ae4c5",
+				"method": "PATCH"
+			},
+			{
+				"id": "02178be4-94a9-467b-8093-d9fbe081b2ed",
+				"method": "DELETE"
+			},
+			{
+				"id": "3803cb57-70d2-42ea-94b2-d3efcb0fc0f4",
+				"method": "POST"
+			},
+			{
+				"id": "d555e054-f3ba-4bf2-b6af-672fccfd9983",
+				"method": "DELETE"
+			}
+		]
+	}
+}

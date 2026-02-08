@@ -1,0 +1,4 @@
+firstName,lastName,email,password,contactFirstName,contactLastName,phone,postalCode,country
+Test,User,test134tfs@fake.com,Pass@123,John,Doe,8005551111,12345,USA
+Demo,User,test2sg34@fake.com,Pass@456,Alex,Flame,8005552222,23456,USA
+Sample,User,test3@rg34fake.com,Pass@789,Chris,Walker,8005553333,34567,USA
